@@ -1,4 +1,5 @@
 import yaml
+
 class Animal:
     def __init__(self,name,color,age,gender):
         self.n = name
