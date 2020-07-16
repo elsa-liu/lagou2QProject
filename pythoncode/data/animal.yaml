@@ -1,0 +1,11 @@
+cat:
+  name: a hua
+  age: 2
+  color: yellow
+  gender: male
+
+dog:
+  name: a huang
+  age: 4
+  color: flower
+  gender: famale
