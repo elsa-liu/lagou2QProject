@@ -36,7 +36,7 @@ class Dog(Animal):
         print("can wangwangwan")
 
 if __name__ == '__main__':
-    with open (r"data/animal.yaml","r") as f:
+    with open (r"data/animal.yaml", "r") as f:
         datas=yaml.safe_load(f)
 
         data_cat = datas["cat"]
