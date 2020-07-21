@@ -32,4 +32,8 @@ class Test_cal:
 
     @pytest.mark.parametrize("a,b,result", data("div"))
     def test_div(self,cal_fixture,a,b,result):
-        assert Cal().div(a, b) == result
+        try:
+            assert Cal().div(a, b) == result
+        except:
+            raise Exception("除数不能为0")
+
