@@ -3,7 +3,9 @@ from selenium.webdriver.remote.webdriver import WebDriver
 
 
 class BasePage:
+    #声明一个空的 保护类变量，作为要访问的网址
     _base_url=''
+    #对类进行初始化，并且定义参数driver
     def __init__(self,driver:WebDriver=None):
         if driver is None:
             self._driver = webdriver.Chrome()
