@@ -1,3 +1,5 @@
+import os
+
 from selenium.webdriver.common.by import By
 
 from pythoncode.work_weixin_homework.workweixin_2.page.base_page import BasePage
