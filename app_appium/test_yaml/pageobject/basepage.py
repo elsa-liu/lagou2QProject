@@ -35,9 +35,9 @@ class BasePage:
                     return self.find(by,locator)
             raise e
 
-    def send(self,by,locator,value):
+    def send(self, by, value, locator=None):
         try:
-            self.find(by,locator).send_keys(value)
+            self.find(by, locator).send_keys(value)
             self._error_count = 0
         except Exception as e:
             self._error_count += 1
