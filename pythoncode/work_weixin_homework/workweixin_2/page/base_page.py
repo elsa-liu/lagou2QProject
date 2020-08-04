@@ -36,5 +36,5 @@ class BasePage():
                 if 'expiry' in cookie.keys():
                     del cookie['expiry']
                 self.driver.add_cookie(cookie)
-            sleep(10)
+            sleep(20)
             self.driver.refresh()

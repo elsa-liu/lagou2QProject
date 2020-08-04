@@ -14,10 +14,10 @@ class Main(BasePage):
 
     def goto_login(self):
         self.find(By.CSS_SELECTOR,".index_top_operation_loginBtn").click()
-        # if os.path.exists("cookies.json") is False:
-        #     print("请添加cookies")
-        #     self.get_cookies()
-        # else:
-        #     self.add_cookie()
+        if os.path.exists("cookies.json") is False:
+            print("请添加cookies")
+            self.get_cookies()
+        else:
+            self.add_cookie()
 
         return Login_Page(self.driver)
