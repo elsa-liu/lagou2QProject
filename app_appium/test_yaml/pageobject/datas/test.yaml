@@ -1,0 +1,10 @@
+-
+  by: id
+  locator: *
+  action : click
+
+-
+  by: xpath
+  locator: *
+  action : send
+  value: '{value}'
