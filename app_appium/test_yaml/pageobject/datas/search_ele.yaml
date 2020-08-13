@@ -1,0 +1,5 @@
+-
+ by: id
+ locator: com.xueqiu.android:id/search_input_text
+ action: send
+ value: "{value}"

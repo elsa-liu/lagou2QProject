@@ -1,9 +1,11 @@
 import yaml
-from selenium.webdriver.android.webdriver import WebDriver
+from appium.webdriver.webdriver import WebDriver
+
+from selenium.webdriver.common.by import By
 
 
 class BasePage:
-    black_lists=[]
+    black_lists=[(By.ID,"image_cancel"),(By.ID,"com.xueqiu.android:id/tv_skip")]
     _params={}
     _error_count = 0
     _error_max = 10
@@ -15,7 +17,7 @@ class BasePage:
     def find(self,by,locator=None):
         try:
             #三目表达式
-            element = self._driver.find_element(*by) if isinstance(by,tuple) else self._driver.find_element(by,locator)
+            element = self._driver.find_elements(*by) if isinstance(by,tuple) else self._driver.find_element(by,locator)
             self._error_count = 0
             return element
         #处理弹窗问题
@@ -63,7 +65,7 @@ class BasePage:
         #打开本地的文件
         with open (path,"r",encoding="utf-8") as f:
             #读取yaml形式的文件，转变为python格式
-            datas:list[dict]=yaml.safe_load(f)
+            datas:list[dict] =yaml.safe_load(f)
             for data in datas:
                 if "by" in data.keys():
                     element=self.find(data["by"],data["locator"])
@@ -75,7 +77,8 @@ class BasePage:
                         content:str= data["value"]
                         for param in self._params:
                             content = content.replace("{%s}"%param,self._params[param])
-                            element.send_keys("content")
+                            #element.send_keys("content")
+                            self.send(data["by"],data["locator"],content)
 
 
 
