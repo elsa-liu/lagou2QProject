@@ -4,6 +4,7 @@ add:
   - [name3,"男",13800000002]
   - [name4,"女",13800000003]
 del:
+  - name1
   - name4
   - name2
   - name3
