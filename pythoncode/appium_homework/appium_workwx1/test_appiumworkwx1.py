@@ -77,7 +77,7 @@ class Test_Member:
         self.driver.find_element_by_xpath('//*[@text="确定"]').click()
         #6.等待成员信息消失
         result = WebDriverWait(self.driver,15).until_not(lambda x:x.find_element_by_xpath(f'//*[@test={del_name}]'))
-        print(result)
+        print(f"返回的数据{result}")
 
 
 
