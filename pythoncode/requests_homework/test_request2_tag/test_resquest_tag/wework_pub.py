@@ -11,12 +11,12 @@ class WeWork(BaseApi):
             "method":"get",
             "url":"https://qyapi.weixin.qq.com/cgi-bin/gettoken",
             "params":{
-                "ID":"ww72a13bb159fd5fee",
-                 "SECRET":"YymWsi34C4FWx4G3FnJCSur82ckeYhGJMM2VGAtrf4M"
+                "corpid":"ww72a13bb159fd5fee",
+                 "corpsecret":"YymWsi34C4FWx4G3FnJCSur82ckeYhGJMM2VGAtrf4M"
             }
         }
 
         r=self.send_api(data)
 
         #r = requests.get(f"https://qyapi.weixin.qq.com/cgi-bin/gettoken?corpid={ID}&corpsecret={SECRET}")
-        return r.json()['access_token']
+        return r['access_token']
